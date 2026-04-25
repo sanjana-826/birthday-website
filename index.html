@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday 🎂</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts: Clash Display for hero, DM Serif for body feel -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 1: LOADER
+  ═══════════════════════════════════════════ -->
+  <div id="loader" class="loader">
+    <div class="loader__inner">
+      <div class="loader__ring">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle class="ring-track" cx="50" cy="50" r="42"/>
+          <circle class="ring-fill" cx="50" cy="50" r="42"/>
+        </svg>
+      </div>
+      <div class="loader__text">
+        <span class="loader__label">crafting something special</span>
+        <span class="loader__dots">
+          <span></span><span></span><span></span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 2: HERO
+  ═══════════════════════════════════════════ -->
+  <section id="hero" class="hero hidden">
+
+    <!-- Animated canvas background (particles) -->
+    <canvas id="hero-canvas"></canvas>
+
+    <!-- Ambient gradient orbs -->
+    <div class="orb orb--a"></div>
+    <div class="orb orb--b"></div>
+    <div class="orb orb--c"></div>
+
+    <div class="hero__content">
+
+      <!-- Decorative top symbol -->
+      <div class="hero__symbol">✦</div>
+
+      <!-- Name — pure typography, no photo -->
+      <h1 class="hero__name">
+        <span class="hero__name-top">my person,</span>
+        <span class="hero__name-main">My Best Friend</span>
+        <span class="hero__name-sub">& the coolest human I know</span>
+      </h1>
+
+      <!-- Enter button -->
+      <button id="enter-btn" class="enter-btn" aria-label="Enter experience">
+        <span class="enter-btn__text">BEGIN</span>
+        <span class="enter-btn__icon">↓</span>
+        <div class="enter-btn__ripple"></div>
+      </button>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 3: MESSAGE EXPERIENCE
+  ═══════════════════════════════════════════ -->
+  <section id="message" class="message hidden">
+
+    <canvas id="msg-canvas"></canvas>
+    <div class="orb orb--d"></div>
+    <div class="orb orb--e"></div>
+
+    <div class="message__lines" id="message-lines">
+
+      <!-- Line 1 -->
+      <div class="msg-line" data-delay="0">
+        <p class="msg-line__text msg-line__text--lg italic">This is for you RAJ 💖✨</p>
+      </div>
+
+      <!-- Divider -->
+      <div class="msg-line msg-line--divider" data-delay="1000">
+        <div class="msg-divider"></div>
+      </div>
+
+      <!-- Line 2 -->
+      <div class="msg-line" data-delay="1600">
+        <p class="msg-line__text msg-line__text--md">Someone who truly matters to me 🌙</p>
+      </div>
+
+      <!-- CTA to final -->
+      <div class="msg-line msg-line--cta" data-delay="2800">
+        <button id="reveal-btn" class="reveal-btn">
+          <span>SEE WHAT TODAY IS ✨</span>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 4: FINAL BIRTHDAY REVEAL
+  ═══════════════════════════════════════════ -->
+  <section id="final" class="final hidden">
+
+    <canvas id="final-canvas"></canvas>
+
+    <!-- Layered ambient orbs -->
+    <div class="orb orb--f"></div>
+    <div class="orb orb--g"></div>
+
+    <div class="final__content">
+
+      <div class="final__badge">
+        <span>✦ twenty and thriving ✦</span>
+      </div>
+
+      <h2 class="final__headline">
+        <span class="final__emoji final__emoji--top">🎂</span>
+        <span class="final__line final__line--top">Happiest</span>
+        <span class="final__line final__line--mid">Birthday Raj</span>
+        <span class="final__emoji final__emoji--bottom">🎉</span>
+      </h2>
+
+      <p class="final__sub">
+        Keep glowing ✨ Keep being <em>exactly you</em> 💫
+      </p>
+
+      <div class="final__glow-ring"></div>
+
+    </div>
+
+    <!-- Subtle floating shapes -->
+    <div class="shapes" id="shapes-container"></div>
+
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
